@@ -1,8 +1,9 @@
 import os
 from sqla_wrapper import SQLAlchemy
 
-db = SQLAlchemy(os.getenv("DATABASE_URL", "sqlite:///localhost.sqlite"))
+db = os.getenv("DATABASE_URL", "sqlite:///localhost.sqlite").replace("postgres://", "postgresql://", 1)
 
+SQLAlchemy(db)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
