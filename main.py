@@ -3,7 +3,9 @@ from models import User, db
 from random import randint
 
 app = Flask(__name__)
+
 db.create_all()
+
 
 
 @app.route("/", methods=["GET"])
