@@ -29,9 +29,10 @@ def result():
         result = "CORRECT"
         user.secret_number = randint(1, 10)
         user.save()
-
-    else:
-        result = "WRONG"
+    elif guess < user.secret_number:
+        result = "BIGGER"
+    elif guess > user.secret_number:
+        result = "SMALLER"
 
     return render_template("result.html", result=result)
 
