@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from models import User, db, SQLALCHEMY_DATABASE_URI
+from models import User, db
 from random import randint
 
 app = Flask(__name__)
